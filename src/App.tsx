@@ -1,28 +1,32 @@
-// import { useState } from 'react';
-// import { User } from './types/user';
+import { useState } from 'react';
+import type{ User } from './types/user';
 
 import './App.css'
 
 import Header from './components/Header';
 import UserTable from './components/UserTable';
+import { useUsers } from './hooks/useUsers';
 
 function App() {
-  // const { users, setUsers } = useUsers();
+  const { users, loading } = useUsers();
+  const [selectedUser, setSelectedUser] = useState<User | null >(null);
+
 
 
   return (
     <>
       <Header />
       <main className='p-4'>
-        <UserTable />
+            {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <UserTable users={users} onSelectUser={setSelectedUser} />
+        )}
 
 
-        {/* <UserTable users={users} onSelectUser={setSelectUser} /> */}
 
 
-{/* {loading ? (
-  <p>Loading...</p>
-)} */}
+
 
    
       </main>
