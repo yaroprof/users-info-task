@@ -1,15 +1,16 @@
 import { useState } from 'react';
-import type{ User } from './types/user';
+import type { User } from './types/user';
 
 import './App.css'
 
 import Header from './components/Header';
 import UserTable from './components/UserTable';
 import { useUsers } from './hooks/useUsers';
+import UserModal from './components/UserModal';
 
 function App() {
   const { users, loading } = useUsers();
-  const [selectedUser, setSelectedUser] = useState<User | null >(null);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
 
 
@@ -17,19 +18,17 @@ function App() {
     <>
       <Header />
       <main className='p-4'>
-            {loading ? (
+        {loading ? (
           <p>Loading...</p>
         ) : (
           <UserTable users={users} onSelectUser={setSelectedUser} />
         )}
 
 
-
-
-
-
-   
+        <UserModal user={selectedUser} onClose={() => setSelectedUser(null)} />
       </main>
+
+
 
     </>
   )
