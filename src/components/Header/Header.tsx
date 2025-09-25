@@ -4,10 +4,10 @@ interface Props {
 }
 
 
-export default function Header({ searchTerm, onSearchChange }) {
+export default function Header({ searchTerm, onSearchChange }: Props) {
     return (
-        <header className="bg-blue-600 text-white p-4 text-xl font-semibold shadow">
-            <h1 className="text-2xl mb-2">User Information</h1>
+        <header className="flex items-center justify-between p-4 bg-gray-100 shadow">
+            <h1 className="text-xl md:text-2xl fonty-bold">User Information</h1>
 
             {/* Search field */}
             <div className="relative w-64">
@@ -18,7 +18,7 @@ export default function Header({ searchTerm, onSearchChange }) {
                 onChange={(e) => onSearchChange(e.target.value)}
                 className="w-full pl-10 pr-3 py-2 border-gray-300 rounded"
                 />
-                <span className="">🔍</span>
+                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
             </div>
         </header>
     )
