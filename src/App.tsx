@@ -6,7 +6,7 @@ import './App.css'
 import Header from './components/Header';
 import UserTable from './components/UserTable';
 import { useUsers } from './hooks/useUsers';
-import UserModal from './components/UserModal';
+import UserModal from './components/UserModal/UserModal';
 
 function App() {
   const { users, loading } = useUsers();

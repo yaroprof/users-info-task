@@ -1,0 +1,52 @@
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transform: scale(0.95);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.modalOpen {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modalClose {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  color: black;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.95); }
+}
