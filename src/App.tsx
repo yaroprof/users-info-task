@@ -11,20 +11,28 @@ import UserModal from './components/UserModal/UserModal';
 function App() {
   const { users, loading } = useUsers();
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
+
+  // Filtered users based on search term
+
+  const filteredUsers = users.filter(user =>
+    user.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+  );
 
 
   return (
     <>
-      <Header />
+      <Header searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <main className='p-4'>
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <UserTable users={users} onSelectUser={setSelectedUser} />
+          <UserTable users={filteredUsers} onSelectUser={setSelectedUser} />
+          // <UserTable users={users} onSelectUser={setSelectedUser} />
         )}
 
-
+        {/* Modal window */}
         <UserModal user={selectedUser} onClose={() => setSelectedUser(null)} />
       </main>
 
