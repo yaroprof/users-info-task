@@ -3,8 +3,8 @@ import type { User } from './types/user';
 
 import './App.css'
 
-import Header from './components/Header';
-import UserTable from './components/UserTable';
+import Header from './components/Header/Header';
+import UserTable from './components/UserTable/UserTable';
 import { useUsers } from './hooks/useUsers';
 import UserModal from './components/UserModal/UserModal';
 
