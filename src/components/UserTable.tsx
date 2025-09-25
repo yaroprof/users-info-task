@@ -20,9 +20,9 @@ export default function UserTable({ users, onSelectUser }: Props) {
             <tbody>
                 {users.map((user) => (
                     <tr key={user.id} className="hover:bg-gray-50">
-                        <td className="p-2 border-b">test</td>
-                        <td className="p-2 border-b">test</td>
-                        <td className="p-2 border-b">test</td>
+                        <td className="p-2 border-b">{user.name}</td>
+                        <td className="p-2 border-b">{user.email}</td>
+                        <td className="p-2 border-b">{user.company.name}</td>
                         <td className="p-2 border-b">
                             <button className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600" onClick={() => onSelectUser(user)}>View</button></td>
                     </tr>
