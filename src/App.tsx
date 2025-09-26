@@ -9,6 +9,7 @@ import { useUsers } from './hooks/useUsers';
 import UserModal from './components/UserModal/UserModal';
 
 function App() {
+  // State for users and selected user
   const { users, loading } = useUsers();
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -42,4 +43,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
