@@ -19,6 +19,10 @@ A single-page application (**SPA**) for browsing a list of users with search fun
 
 ---
 
+## 📸 Screenshot
+
+![Users Info App](public/screenshot.png)
+
 ## Tech Stack
 
 - [Vite 4.1](https://vitejs.dev/) — bundler
